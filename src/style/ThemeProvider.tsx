@@ -1,7 +1,9 @@
 import React, { ReactElement, FC } from 'react';
+import { useState } from 'context/AppContext';
 import { ThemeProvider as StyledComponentsProvider } from 'styled-components';
 import theme from './theme';
 import { BaseContainer } from './sharedStyle';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 interface IProps {
@@ -9,10 +11,9 @@ interface IProps {
 }
 
 const ThemeProvider: FC<IProps> = ({ children }) => {
-	const themeValue = 'dark';
-
+	const { themeKey } = useState();
 	return (
-		<StyledComponentsProvider theme={theme[themeValue]}>
+		<StyledComponentsProvider theme={theme[themeKey]}>
 			<BaseContainer>{children}</BaseContainer>
 		</StyledComponentsProvider>
 	);

@@ -26,5 +26,6 @@ export const Text = styled.p.attrs(({ as }: { as?: 'p' | 'div' | 'span' | 'h2' |
 		font-size: ${size || theme.text.m}px;
 		font-weight: ${weight || 300};
 		color: ${color || theme.contrastText};
+		margin: 0;
 	`}
 `;
