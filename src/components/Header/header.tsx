@@ -14,7 +14,7 @@ const NavBar = styled(Navbar)`
 
 const ThemeCheckbox = styled(Check)`
 	margin-left: auto;
-	&:hover {
+	& .custom-control-label {
 		cursor: pointer;
 	}
 `;

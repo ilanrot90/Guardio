@@ -4,12 +4,22 @@ import { IProps } from './types';
 import ThemeProvider from 'style/ThemeProvider';
 import { ContextProvider } from 'context/AppContext';
 import Application from './App';
-import 'normalize.css';
+import { ReactQueryDevtools } from 'react-query-devtools';
+import { ReactQueryConfigProvider } from 'react-query';
+
+const queryConfig = {
+	shared: {
+		suspense: true,
+	},
+};
 
 const RootProviders = ({ children }: IProps) => {
 	return (
 		<ContextProvider>
-			<ThemeProvider>{children}</ThemeProvider>
+			<ReactQueryConfigProvider config={queryConfig}>
+				<ThemeProvider>{children}</ThemeProvider>
+				<ReactQueryDevtools />
+			</ReactQueryConfigProvider>
 		</ContextProvider>
 	);
 };
