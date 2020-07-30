@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Guardio/static/css/main.b32364c1.chunk.css",
+    "main.js": "/Guardio/static/js/main.b174716f.chunk.js",
+    "main.js.map": "/Guardio/static/js/main.b174716f.chunk.js.map",
+    "runtime-main.js": "/Guardio/static/js/runtime-main.d50927fc.js",
+    "runtime-main.js.map": "/Guardio/static/js/runtime-main.d50927fc.js.map",
+    "static/css/2.74f4c41c.chunk.css": "/Guardio/static/css/2.74f4c41c.chunk.css",
+    "static/js/2.68ebfb9a.chunk.js": "/Guardio/static/js/2.68ebfb9a.chunk.js",
+    "static/js/2.68ebfb9a.chunk.js.map": "/Guardio/static/js/2.68ebfb9a.chunk.js.map",
+    "static/js/3.c646327c.chunk.js": "/Guardio/static/js/3.c646327c.chunk.js",
+    "static/js/3.c646327c.chunk.js.map": "/Guardio/static/js/3.c646327c.chunk.js.map",
+    "static/js/4.d0c91084.chunk.js": "/Guardio/static/js/4.d0c91084.chunk.js",
+    "static/js/4.d0c91084.chunk.js.map": "/Guardio/static/js/4.d0c91084.chunk.js.map",
+    "index.html": "/Guardio/index.html",
+    "precache-manifest.f7d13660073be1dba880ca9bdc57bbe6.js": "/Guardio/precache-manifest.f7d13660073be1dba880ca9bdc57bbe6.js",
+    "service-worker.js": "/Guardio/service-worker.js",
+    "static/css/2.74f4c41c.chunk.css.map": "/Guardio/static/css/2.74f4c41c.chunk.css.map",
+    "static/css/main.b32364c1.chunk.css.map": "/Guardio/static/css/main.b32364c1.chunk.css.map",
+    "static/js/2.68ebfb9a.chunk.js.LICENSE.txt": "/Guardio/static/js/2.68ebfb9a.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Guardio/static/media/Roboto-Regular.11eabca2.ttf",
+    "static/media/icon.a3e2306b.svg": "/Guardio/static/media/icon.a3e2306b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d50927fc.js",
+    "static/css/2.74f4c41c.chunk.css",
+    "static/js/2.68ebfb9a.chunk.js",
+    "static/css/main.b32364c1.chunk.css",
+    "static/js/main.b174716f.chunk.js"
+  ]
+}
