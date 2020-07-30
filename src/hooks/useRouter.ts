@@ -2,7 +2,9 @@ import { useParams, useLocation, useHistory } from 'react-router-dom';
 import qs from 'qs';
 import { useMemo } from 'react';
 
-export function useRouter() {
+export const setQuery = (params: { [key: string]: string | number }) => qs.stringify(params, { addQueryPrefix: true });
+
+export default function useRouter() {
 	const params = useParams();
 	const location = useLocation();
 	const history = useHistory();

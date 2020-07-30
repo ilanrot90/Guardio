@@ -5,9 +5,9 @@ import Pagination from './Pagination';
 import BreachList from './BreachList';
 import Loader from 'components/Loader';
 import useFetchBreaches from 'hooks/useFetchBreaches.js';
-import qs from 'qs';
 import { IBreach } from 'types';
-import { useRouter } from 'hooks/useRouter';
+import useRouter, { setQuery } from 'hooks/useRouter';
+import BreachModal from '../SelectedBreach/SelectedBreachModal';
 
 const PageContainer = styled.div`
 	height: 100%;
@@ -28,7 +28,7 @@ const BreachContainer: FC<{ id?: string }> = ({ id }) => {
 	const { history, query } = useRouter();
 	const [page, setPage] = useState(Number(query?.page || 0));
 	// @ts-ignore
-	const { data, isFetching, latestData, ...rest } = useFetchBreaches(page);
+	const { data, isFetching } = useFetchBreaches(page);
 	const selectedBreach = useMemo(() => {
 		if (!id) return null;
 		return data?.items.find((breach: IBreach) => breach.Title === id);
@@ -37,19 +37,18 @@ const BreachContainer: FC<{ id?: string }> = ({ id }) => {
 	const setNextPage = useCallback(
 		(showNext: boolean) => {
 			const nextPage = showNext ? page + 1 : page - 1;
-			history.push(qs.stringify({ page: nextPage }, { addQueryPrefix: true }));
+			history.push(setQuery({ page: nextPage }));
 			setPage(showNext ? page + 1 : page - 1);
 		},
-		[page]
+		[page, history]
 	);
-
-	console.log({ rest });
 
 	return (
 		<PageContainer>
 			<Title>Known Data Breaches ( By Gruadio )</Title>
 			{isFetching ? <Loader /> : <BreachList breaches={data.items} />}
 			<Pagination currentPage={page} total={data?.total || 0} callback={setNextPage} />
+			{selectedBreach && <BreachModal breach={selectedBreach} />}
 		</PageContainer>
 	);
 };

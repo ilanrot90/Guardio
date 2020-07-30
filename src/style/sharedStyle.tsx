@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import Button from 'react-bootstrap/Button';
 
 export const centerFlex = css`
 	display: flex;
@@ -54,4 +55,9 @@ export const scrollbar = css`
 		width: 6px;
 		height: 6px;
 	}
+`;
+
+export const StyledButton = styled(Button)`
+	background-color: ${({ theme }) => theme.main};
+	margin-top: auto;
 `;
