@@ -4,7 +4,6 @@ import { IProps } from './types';
 import ThemeProvider from 'style/ThemeProvider';
 import { ContextProvider } from 'context/AppContext';
 import Application from './App';
-import { ReactQueryDevtools } from 'react-query-devtools';
 import { ReactQueryConfigProvider } from 'react-query';
 import Loader from './components/Loader';
 
@@ -21,7 +20,6 @@ const RootProviders = ({ children }: IProps) => {
 			<ReactQueryConfigProvider config={queryConfig}>
 				<Suspense fallback={<Loader />}>
 					<ThemeProvider>{children}</ThemeProvider>
-					<ReactQueryDevtools />
 				</Suspense>{' '}
 			</ReactQueryConfigProvider>
 		</ContextProvider>
