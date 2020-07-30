@@ -47,7 +47,7 @@ const IconContainer = styled.span`
 const BreachModal: FC<{ breach: IBreach }> = ({ breach }) => {
 	const { history } = useRouter();
 	const hideModal = useCallback(() => {
-		history.push('/');
+		history.push('/Guardio/');
 	}, [history]);
 
 	return (

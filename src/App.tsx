@@ -9,11 +9,11 @@ const Application = () => {
 			<Header />
 			<Switch>
 				<Route
-					path="/:id"
+					path="/Guardio/:id"
 					render={({ match }: { match: match<{ id: string }> }) => <BreachContainer id={match.params.id} />}
 					id={'modal'}
 				/>
-				<Route path="/" component={BreachContainer} />
+				<Route path="/Guardio" component={BreachContainer} />
 			</Switch>
 		</BrowserRouter>
 	);
