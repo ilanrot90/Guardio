@@ -46,7 +46,7 @@ const BreachContainer: FC<{ id?: string }> = ({ id }) => {
 		},
 		[page, history]
 	);
-
+	console.log(id);
 	return (
 		<PageContainer>
 			<Title>Known Data Breaches ( By Gruadio )</Title>

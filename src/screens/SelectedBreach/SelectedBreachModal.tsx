@@ -1,6 +1,7 @@
 import React, { FC, useCallback } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { StyledButton, Text } from 'style/sharedStyle';
+import { Theme } from 'style/theme';
 import { IBreach } from 'types';
 import useRouter from 'hooks/useRouter';
 import styled from 'styled-components';
@@ -36,12 +37,27 @@ const StyledModal = styled(Modal)`
 const ModalSection = styled(ListGroupItem)`
 	margin-top: ${({ theme }) => theme.spacing.l}px;
 	background-color: ${({ theme }) => theme.dark};
+	display: flex;
+	justify-content: space-between;
 `;
 
 const IconContainer = styled.span`
 	width: 25px;
 	height: 25px;
 	margin: 0 ${({ theme }) => theme.spacing.s}px;
+`;
+
+const Block = styled(Text)`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+const IconChecked = styled(Icon).attrs({
+	name: 'checkbox',
+})<{ isChecked: boolean }>`
+	margin-left: ${({ theme }) => theme.spacing.s}px;
+	opacity: ${({ isChecked }) => (isChecked ? 1 : 0.2)};
 `;
 
 const BreachModal: FC<{ breach: IBreach }> = ({ breach }) => {
@@ -77,11 +93,30 @@ const BreachModal: FC<{ breach: IBreach }> = ({ breach }) => {
 			<Modal.Body>
 				<Text>{breach.Description}</Text>
 				<ModalSection>
-					<Text>Name: {breach.Name}</Text>
-					<Text>Domain: {breach.Domain}</Text>
-					<Text>BreachDate: {breach.BreachDate}</Text>
-					<Text>Pwn Count: {breach.PwnCount}</Text>
-					<Text>Lest Modified Date: {new Date(breach.ModifiedDate).toLocaleString()}</Text>
+					<div>
+						<Text>Name: {breach.Name}</Text>
+						<Text>Domain: {breach.Domain}</Text>
+						<Text>BreachDate: {breach.BreachDate}</Text>
+						<Text>Pwn Count: {breach.PwnCount}</Text>
+						<Text>Lest Modified Date: {new Date(breach.ModifiedDate).toLocaleString()}</Text>
+					</div>
+					<div>
+						<Block>
+							Verified: <IconChecked isChecked={breach.IsVerified} />
+						</Block>
+						<Block>
+							Fabricated: <IconChecked isChecked={breach.IsFabricated} />
+						</Block>
+						<Block>
+							Sensitive: <IconChecked isChecked={breach.IsSensitive} />
+						</Block>
+						<Block>
+							Retired: <IconChecked isChecked={breach.IsRetired} />
+						</Block>
+						<Block>
+							SpamList: <IconChecked isChecked={breach.IsSpamList} />
+						</Block>
+					</div>
 				</ModalSection>
 			</Modal.Body>
 			<Modal.Footer>

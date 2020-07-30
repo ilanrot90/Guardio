@@ -44,7 +44,7 @@ const BreachCard: FC<{ breach: IBreach }> = ({ breach }) => {
 					</Text>
 				</Card.Subtitle>
 			</Card.Body>
-			<StyledButton variant="primary" onClick={setSelectedBreach(breach.Name)}>
+			<StyledButton variant="primary" onClick={setSelectedBreach(breach.Title)}>
 				<Text weight={500}>Explore Breach</Text>
 			</StyledButton>
 		</Breach>
