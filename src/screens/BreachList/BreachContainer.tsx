@@ -24,11 +24,15 @@ const Title = styled(Text).attrs({
 	margin-left: ${({ theme }) => theme.spacing.xxl}px;
 `;
 
+const ErrorMsg = styled(Text)`
+	margin: auto;
+`;
+
 const BreachContainer: FC<{ id?: string }> = ({ id }) => {
 	const { history, query } = useRouter();
 	const [page, setPage] = useState(Number(query?.page || 0));
 	// @ts-ignore
-	const { data, isFetching } = useFetchBreaches(page);
+	const { data, isFetching, isError } = useFetchBreaches(page);
 	const selectedBreach = useMemo(() => {
 		if (!id) return null;
 		return data?.items.find((breach: IBreach) => breach.Title === id);
@@ -46,7 +50,7 @@ const BreachContainer: FC<{ id?: string }> = ({ id }) => {
 	return (
 		<PageContainer>
 			<Title>Known Data Breaches ( By Gruadio )</Title>
-			{isFetching ? <Loader /> : <BreachList breaches={data.items} />}
+			{isFetching ? <Loader /> : isError ? <ErrorMsg size={18} weight={600} as={'h1'} /> : <BreachList breaches={data.items} />}
 			<Pagination currentPage={page} total={data?.total || 0} callback={setNextPage} />
 			{selectedBreach && <BreachModal breach={selectedBreach} />}
 		</PageContainer>
