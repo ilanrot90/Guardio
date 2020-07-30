@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route, match } from 'react-router-dom';
 
 const Application = () => {
 	return (
-		<BrowserRouter basename={process.env.PUBLIC_URL}>
+		<BrowserRouter basename={'/Guardio'}>
 			<Header />
 			<Switch>
 				<Route
