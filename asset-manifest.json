@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Guardio/static/css/main.b32364c1.chunk.css",
-    "main.js": "/Guardio/static/js/main.22b042c9.chunk.js",
-    "main.js.map": "/Guardio/static/js/main.22b042c9.chunk.js.map",
+    "main.js": "/Guardio/static/js/main.72bf6648.chunk.js",
+    "main.js.map": "/Guardio/static/js/main.72bf6648.chunk.js.map",
     "runtime-main.js": "/Guardio/static/js/runtime-main.7a057306.js",
     "runtime-main.js.map": "/Guardio/static/js/runtime-main.7a057306.js.map",
     "static/css/2.74f4c41c.chunk.css": "/Guardio/static/css/2.74f4c41c.chunk.css",
@@ -13,7 +13,7 @@
     "static/js/4.c1ef7f8f.chunk.js": "/Guardio/static/js/4.c1ef7f8f.chunk.js",
     "static/js/4.c1ef7f8f.chunk.js.map": "/Guardio/static/js/4.c1ef7f8f.chunk.js.map",
     "index.html": "/Guardio/index.html",
-    "precache-manifest.87be50027e8271e465bdcc4fef2fde14.js": "/Guardio/precache-manifest.87be50027e8271e465bdcc4fef2fde14.js",
+    "precache-manifest.c3f5227e5caf1f4c068aa8d354878891.js": "/Guardio/precache-manifest.c3f5227e5caf1f4c068aa8d354878891.js",
     "service-worker.js": "/Guardio/service-worker.js",
     "static/css/2.74f4c41c.chunk.css.map": "/Guardio/static/css/2.74f4c41c.chunk.css.map",
     "static/css/main.b32364c1.chunk.css.map": "/Guardio/static/css/main.b32364c1.chunk.css.map",
@@ -26,6 +26,6 @@
     "static/css/2.74f4c41c.chunk.css",
     "static/js/2.640e4f2c.chunk.js",
     "static/css/main.b32364c1.chunk.css",
-    "static/js/main.22b042c9.chunk.js"
+    "static/js/main.72bf6648.chunk.js"
   ]
 }
