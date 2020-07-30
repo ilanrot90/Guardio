@@ -19,7 +19,7 @@ export default function useFetchBreaches(page) {
 			suspense: true,
 			refetchOnWindowFocus: false,
 			initialData: { items: [], total: 0, error: null },
-			initialState: true,
+			initialStale: true,
 		}
 	);
 }
