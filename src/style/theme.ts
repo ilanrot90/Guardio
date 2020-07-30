@@ -1,5 +1,5 @@
 import { DefaultTheme, FlattenSimpleInterpolation, css } from 'styled-components';
-import { centerFlex } from './sharedStyle';
+import { centerFlex, scrollbar } from './sharedStyle';
 export interface Theme {
 	light: string;
 	background: string;
@@ -8,6 +8,7 @@ export interface Theme {
 	contrastText: string;
 	utils: {
 		centerFlex: FlattenSimpleInterpolation;
+		scrollbar: FlattenSimpleInterpolation;
 	};
 }
 
@@ -20,6 +21,7 @@ declare module 'styled-components' {
 		contrastText: string;
 		utils: {
 			centerFlex: FlattenSimpleInterpolation;
+			scrollbar: FlattenSimpleInterpolation;
 		};
 		spacing: {
 			s: number;
@@ -49,6 +51,7 @@ const sharedTheme = {
 	},
 	utils: {
 		centerFlex,
+		scrollbar,
 	},
 	spacing: {
 		s: 4,

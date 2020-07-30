@@ -5,6 +5,7 @@ import theme from './theme';
 import { BaseContainer } from './sharedStyle';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import 'normalize.css';
 
 interface IProps {
 	children: ReactElement;
