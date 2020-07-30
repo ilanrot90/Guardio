@@ -29,3 +29,29 @@ export const Text = styled.p.attrs(({ as }: { as?: 'p' | 'div' | 'span' | 'h2' |
 		margin: 0;
 	`}
 `;
+
+export const scrollbar = css`
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+		border-radius: 6px;
+		background-color: #ffffff;
+	}
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		/* height: 6px; */
+		background-color: rgba(166, 185, 200, 0.5);
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 6px;
+		background-color: rgba(166, 185, 200, 0.5);
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(166, 185, 200, 1);
+	}
+
+	&:hover::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+`;

@@ -4,9 +4,11 @@ import { Theme } from 'types';
 interface IState {
 	themeKey: Theme;
 }
+console.log(localStorage.getItem('theme'));
+const { theme } = localStorage.getItem('userPref') ? JSON.parse(localStorage.getItem('userPref') || '') : { theme: 'dark' };
 
 const initialState = {
-	themeKey: 'dark' as 'dark',
+	themeKey: theme,
 };
 
 export type Action =
@@ -22,7 +24,9 @@ type Reducer = (state: IState, action: Action) => IState;
 const reducer: Reducer = (state, { type }) => {
 	switch (type) {
 		case 'TOGGLE_THEME': {
-			return { ...state, themeKey: state.themeKey === 'dark' ? 'light' : 'dark' };
+			const themeKey = state.themeKey === 'dark' ? 'light' : 'dark';
+			localStorage.setItem('userPref', JSON.stringify({ theme: themeKey }));
+			return { ...state, themeKey: themeKey };
 		}
 		case 'RESET_STATE': {
 			return { ...initialState };

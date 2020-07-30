@@ -1,15 +1,17 @@
 import ReactDOM from 'react-dom';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { IProps } from './types';
 import ThemeProvider from 'style/ThemeProvider';
 import { ContextProvider } from 'context/AppContext';
 import Application from './App';
 import { ReactQueryDevtools } from 'react-query-devtools';
 import { ReactQueryConfigProvider } from 'react-query';
+import Loader from './components/Loader';
 
 const queryConfig = {
 	shared: {
 		suspense: true,
+		refetchOnWindowFocus: false,
 	},
 };
 
@@ -17,8 +19,10 @@ const RootProviders = ({ children }: IProps) => {
 	return (
 		<ContextProvider>
 			<ReactQueryConfigProvider config={queryConfig}>
-				<ThemeProvider>{children}</ThemeProvider>
-				<ReactQueryDevtools />
+				<Suspense fallback={<Loader />}>
+					<ThemeProvider>{children}</ThemeProvider>
+					<ReactQueryDevtools />
+				</Suspense>{' '}
 			</ReactQueryConfigProvider>
 		</ContextProvider>
 	);
