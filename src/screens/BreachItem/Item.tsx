@@ -26,7 +26,7 @@ const BreachCard: FC<{ breach: IBreach }> = ({ breach }) => {
 
 	const setSelectedBreach = useCallback(
 		(title: string) => () => {
-			history.push(`/Guardio/${title}${setQuery({ page: query.page || 0 })}`);
+			history.push(`/${title}${setQuery({ page: query.page || 0 })}`);
 		},
 		[history, query]
 	);

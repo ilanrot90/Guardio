@@ -5,15 +5,15 @@ import { BrowserRouter, Switch, Route, match } from 'react-router-dom';
 
 const Application = () => {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<Header />
 			<Switch>
 				<Route
-					path="/Guardio/:id"
+					path="/:id"
 					render={({ match }: { match: match<{ id: string }> }) => <BreachContainer id={match.params.id} />}
 					id={'modal'}
 				/>
-				<Route path="/Guardio" component={BreachContainer} />
+				<Route path="/" component={BreachContainer} />
 			</Switch>
 		</BrowserRouter>
 	);

@@ -63,7 +63,7 @@ const IconChecked = styled(Icon).attrs({
 const BreachModal: FC<{ breach: IBreach }> = ({ breach }) => {
 	const { history } = useRouter();
 	const hideModal = useCallback(() => {
-		history.push('/Guardio/');
+		history.push('/');
 	}, [history]);
 
 	return (
