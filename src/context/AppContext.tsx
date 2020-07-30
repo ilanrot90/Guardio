@@ -4,7 +4,6 @@ import { Theme } from 'types';
 interface IState {
 	themeKey: Theme;
 }
-console.log(localStorage.getItem('theme'));
 const { theme } = localStorage.getItem('userPref') ? JSON.parse(localStorage.getItem('userPref') || '') : { theme: 'dark' };
 
 const initialState = {
